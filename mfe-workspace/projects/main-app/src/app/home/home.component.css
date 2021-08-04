@@ -1,0 +1,22 @@
+.center h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+    color: #777;
+    font-family: arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+.center {
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 100px;
+    line-height: 100px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 15px #555;
+}

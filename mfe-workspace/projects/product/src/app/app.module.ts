@@ -5,6 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -38,6 +40,7 @@ const routes : Routes = [
   ],
   imports: [
     BrowserModule,
+    // BrowserAnimationsModule,
     RouterModule.forChild(routes),
     MatCardModule,
     MatToolbarModule,
