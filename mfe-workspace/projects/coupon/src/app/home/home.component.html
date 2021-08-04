@@ -1,1 +1,9 @@
-<p>coupon home works!</p>
+<div class="container">
+    <div class="box" *ngFor="let coupon of couponList">
+        <mat-card>
+            <mat-card-title>{{ coupon.code }}</mat-card-title>
+            <mat-card-subtitle>{{ coupon.discount }}%</mat-card-subtitle>
+            <mat-card-content>{{ coupon.expiryDate }}</mat-card-content>
+        </mat-card>
+    </div>
+</div>

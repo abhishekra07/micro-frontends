@@ -1,8 +1,10 @@
-<ul>
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="/product/home">Products</a></li>
-  <li><a routerLink="/coupon/home">Coupon</a></li>
-</ul>
-
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <span routerLink="/">App</span>
+  <div class="spacer"></div>
+  <button mat-raised-button routerLink="/product/home">Product</button>
+  <button mat-raised-button routerLink="/product/add-product" color="primary">Add Product</button>
+  <button mat-raised-button routerLink="/coupon/home">Coupon</button>
+  <button mat-raised-button routerLink="/coupon/add-coupon" color="primary">Add Coupon</button>
+</mat-toolbar>
+  <router-outlet></router-outlet>
 

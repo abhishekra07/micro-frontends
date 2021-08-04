@@ -1,0 +1,19 @@
+.container {
+    min-height: 100px;
+    margin:20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid green; */
+}
+
+.box {
+    flex-grow: 1;
+    max-width:390px;
+    min-height: 50px;
+    /* border: 2px solid red; */
+}
+.box:not(:last-child) {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
