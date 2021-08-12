@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { AddCouponComponent } from './add-coupon/add-coupon.component';
 
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -14,33 +13,27 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 
 const routes : Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'coupon',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'add-coupon',
-    component: AddCouponComponent,
+    path: 'coupon',
+    loadChildren: () => import('./coupon/coupon.module')
+            .then(m => m.CouponModule)
   }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    AddCouponComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forChild(routes),
+    RouterModule.forRoot(routes),
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,

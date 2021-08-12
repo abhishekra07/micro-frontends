@@ -6,7 +6,7 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   path.join(__dirname, '../../tsconfig.json'),
-  [/* mapped paths to share */]);
+  ['models']);
 
 module.exports = {
   output: {
@@ -32,10 +32,11 @@ module.exports = {
         // },        
         
         // For hosts (please adjust)
-        remotes: {
-            "product": "product@http://localhost:6002/remoteEntry.js",
-            "coupon": "coupon@http://localhost:6003/remoteEntry.js",
-        },
+        // remotes: {
+        //     "product": "product@http://localhost:6002/remoteEntry.js",
+        //     "coupon": "coupon@http://localhost:6003/remoteEntry.js",
+        // },
+        remotes: {},
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 

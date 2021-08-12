@@ -28,7 +28,7 @@ module.exports = {
         name: "coupon",
         filename: "remoteEntry.js",
         exposes: {
-            './CoupModule': './projects/coupon/src/app/app.module.ts',
+            './CoupModule': './projects/coupon/src/app/coupon/coupon.module.ts',
         },        
         
         // For hosts (please adjust)

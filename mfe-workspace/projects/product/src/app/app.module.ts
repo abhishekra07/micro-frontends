@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -14,41 +11,28 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
-import { AddProductComponent } from './add-product/add-product.component';
+import { ProductModule } from './product-module/product.module';
 
 const routes : Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'product',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'add-product',
-    component: AddProductComponent,
+    path: 'product',
+    loadChildren: () => import('./product-module/product.module')
+            .then(m => m.ProductModule)
   }
 ]
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    AddProductComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    // BrowserAnimationsModule,
-    RouterModule.forChild(routes),
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    FormsModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
