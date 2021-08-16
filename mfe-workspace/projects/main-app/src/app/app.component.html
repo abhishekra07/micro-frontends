@@ -1,11 +1,14 @@
 <mat-toolbar color="primary">
   <span routerLink="/" class="app">App</span>
   <div class="spacer"></div>
-  <button mat-raised-button routerLink="/" class="space" class="space">Home</button>
-  <button mat-raised-button routerLink="/product/home" class="space">Product</button>
+  <button mat-raised-button routerLink="/" class="home-btn">Home</button>
+  <div *ngFor="let mfe of microfrontends" class="btn-margin">
+    <button mat-raised-button [routerLink]="mfe.routePath" routerLink="/" class="space" class="space">{{mfe.displayName}}</button>
+  </div>
+  <!-- <button mat-raised-button routerLink="/product/home" class="space">Product</button>
   <button mat-raised-button routerLink="/product/add-product" class="space">Add Product</button>
   <button mat-raised-button routerLink="/coupon/home" class="space">Coupon</button>
-  <button mat-raised-button routerLink="/coupon/add-coupon" class="space">Add Coupon</button>
+  <button mat-raised-button routerLink="/coupon/add-coupon" class="space">Add Coupon</button> -->
 </mat-toolbar>
   <router-outlet></router-outlet>
 

@@ -4,6 +4,9 @@
 .app{
     cursor: pointer;
 }
-.space:not(:last-child) {
+.btn-margin:not(:last-child) {
     margin-right: 5px;
+}
+.home-btn {
+    margin-right: 5px;;
 }
